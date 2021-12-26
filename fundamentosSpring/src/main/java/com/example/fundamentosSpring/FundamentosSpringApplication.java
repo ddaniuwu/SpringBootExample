@@ -1,18 +1,19 @@
 package com.example.fundamentosSpring;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import com.example.fundamentosSpring.component.ComponentDependency;
+
 
 @SpringBootApplication
 public class FundamentosSpringApplication implements CommandLineRunner{
 	
-	private ComponentDependency ComponentDependency;
+	private ComponentDependency componentDependency;
 	
-	public FundamentosSpringApplication(ComponentDependency ComponentDependency){
-		this.ComponentDependency = ComponentDependency;
+	public FundamentosSpringApplication(ComponentDependency componentDependency){
+		this.componentDependency = componentDependency;
 	}
 	
 	public static void main(String[] args) {
@@ -21,7 +22,7 @@ public class FundamentosSpringApplication implements CommandLineRunner{
 	
 	@Override
 	public void run(String... args){
-		ComponentDependency.Saludar();
+		componentDependency.saludar();
 	}
 
 }
